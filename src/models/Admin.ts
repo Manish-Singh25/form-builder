@@ -1,15 +1,14 @@
-// src/models/User.ts
 import mongoose, { Schema, Document } from 'mongoose';
 import { USER_STATUS } from '../helpers/const';
 
-interface IUser extends Document {
+interface IAdmin extends Document {
   name: string;
   email: string;
   password: string;
   status: string;
 }
 
-const UserSchema: Schema = new Schema({
+const AdminSchema: Schema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
@@ -19,5 +18,5 @@ const UserSchema: Schema = new Schema({
   strict: true
 });
 
-const User = mongoose.model<IUser>('User', UserSchema);
-export default User;
+const Admin = mongoose.model<IAdmin>('Admin', AdminSchema);
+export default Admin;
